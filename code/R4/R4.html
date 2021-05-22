@@ -9,7 +9,7 @@
   </head>
   <body>
     <table class="table table-stripped">
-      <tbody id="data">
+      <tbody id="datos">
        <div class="container">
          <table class="table table-stripped">
            <thead>
@@ -32,13 +32,13 @@
         fetch("http://api.mediastack.com/v1/news?access_key=11d12c0641a4e30e13533c336fe626a3&sources=en&countries=us,ar").then(
             res=>{
                 res.json().then(
-                    data=>{
-                        console.log(data);
-                        if(data.length >0){
+                    datos=>{
+                        console.log(datos);
+                        if(datos.length >0){
                           var temp = "";
 
                           //---empieza for loop
-                            data.forEach((u)=>{
+                            datos.forEach((u)=>{
                             temp +="<td>"+u.title+"</td>";
                             temp +="<td>"+u.description+"</td>";
                             temp +="<td>"+u.country+"</td>";
@@ -47,7 +47,7 @@
 
                          //---termina for loop
 
-                         document.getElementById("data").innerHTML = temp;
+                         document.getElementById("datos").innerHTML = temp;
                         }
                     }
                 )
